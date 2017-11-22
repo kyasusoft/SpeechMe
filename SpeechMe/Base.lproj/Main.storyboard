@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここに、話す内容を入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-kQ-dzH">
+                                <rect key="frame" x="16" y="190" width="343" height="353"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cyZ-Zg-myL"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3V-Fj-ptf">
+                                <rect key="frame" x="16" y="71" width="343" height="30"/>
+                                <state key="normal" title="話す（iOS)"/>
+                                <connections>
+                                    <action selector="speech:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSe-B4-Fwb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="速度：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vef-7G-bCv">
+                                <rect key="frame" x="28" y="577" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Zuv-2H-DYb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ピッチ：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxG-Uv-Y9X">
+                                <rect key="frame" x="28" y="622" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="qop-z3-zC6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ePQ-qZ-dcZ">
+                                <rect key="frame" x="106" y="573" width="246" height="30"/>
+                                <connections>
+                                    <action selector="changeRate:" destination="BYZ-38-t0r" eventType="valueChanged" id="5jG-u4-OMq"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="3nh-kH-vFB">
+                                <rect key="frame" x="106" y="618" width="246" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="E17-DW-cQD"/>
+                                    <constraint firstAttribute="width" constant="242" id="FVz-jW-IoE"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changePitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="36E-lx-z64"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS用調整" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kk-B7-Q4F">
+                                <rect key="frame" x="129" y="551" width="79" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IhI-vD-2zY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="v0.5.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1C-jh-ceC">
+                                <rect key="frame" x="290" y="20" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDm-wL-0SY">
+                                <rect key="frame" x="15" y="124" width="345" height="30"/>
+                                <state key="normal" title="話す（aws  polly)"/>
+                                <connections>
+                                    <action selector="speechPolly:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdy-2t-oN4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hlB-kQ-dzH" secondAttribute="bottom" constant="124" id="229-xu-IH2"/>
+                            <constraint firstItem="Vef-7G-bCv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="5rZ-eI-yuV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ePQ-qZ-dcZ" secondAttribute="trailing" constant="25" id="ClM-Rq-9Q5"/>
+                            <constraint firstItem="hlB-kQ-dzH" firstAttribute="top" secondItem="N3V-Fj-ptf" secondAttribute="bottom" constant="89" id="Ddt-IT-szh"/>
+                            <constraint firstAttribute="bottom" secondItem="3nh-kH-vFB" secondAttribute="bottom" constant="20" symbolic="YES" id="JhF-TM-UZv"/>
+                            <constraint firstItem="N3V-Fj-ptf" firstAttribute="trailing" secondItem="hlB-kQ-dzH" secondAttribute="trailing" id="KR4-hN-FBd"/>
+                            <constraint firstItem="MxG-Uv-Y9X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="Mf9-qD-nqi"/>
+                            <constraint firstItem="MxG-Uv-Y9X" firstAttribute="centerY" secondItem="3nh-kH-vFB" secondAttribute="centerY" id="P8j-rw-R94"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xDm-wL-0SY" secondAttribute="trailing" constant="15" id="TUM-v6-61C"/>
+                            <constraint firstItem="xDm-wL-0SY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="WHX-4B-FyP"/>
+                            <constraint firstItem="ePQ-qZ-dcZ" firstAttribute="top" secondItem="1kk-B7-Q4F" secondAttribute="bottom" constant="1" id="Wd9-4s-mGS"/>
+                            <constraint firstItem="N3V-Fj-ptf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="YGB-Fk-eKU"/>
+                            <constraint firstItem="hlB-kQ-dzH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bjf-7T-KtP"/>
+                            <constraint firstItem="MxG-Uv-Y9X" firstAttribute="top" secondItem="Vef-7G-bCv" secondAttribute="bottom" constant="24" id="d9S-lK-Q6v"/>
+                            <constraint firstItem="3nh-kH-vFB" firstAttribute="leading" secondItem="ePQ-qZ-dcZ" secondAttribute="leading" id="eCs-Rv-vvA"/>
+                            <constraint firstItem="3nh-kH-vFB" firstAttribute="leading" secondItem="MxG-Uv-Y9X" secondAttribute="trailing" constant="10" id="m6N-kf-9hJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3nh-kH-vFB" secondAttribute="trailing" constant="25" id="mPe-Rp-b1n"/>
+                            <constraint firstItem="N3V-Fj-ptf" firstAttribute="leading" secondItem="hlB-kQ-dzH" secondAttribute="leading" id="pic-8l-4Km"/>
+                            <constraint firstItem="1kk-B7-Q4F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="qMT-8a-66p"/>
+                            <constraint firstItem="1kk-B7-Q4F" firstAttribute="top" secondItem="hlB-kQ-dzH" secondAttribute="bottom" constant="8" symbolic="YES" id="qpv-zi-AkI"/>
+                            <constraint firstItem="xDm-wL-0SY" firstAttribute="top" secondItem="N3V-Fj-ptf" secondAttribute="bottom" constant="23" id="r8O-K6-rjQ"/>
+                            <constraint firstItem="3nh-kH-vFB" firstAttribute="top" secondItem="ePQ-qZ-dcZ" secondAttribute="bottom" constant="16" id="xK8-OD-zAd"/>
+                            <constraint firstItem="ePQ-qZ-dcZ" firstAttribute="leading" secondItem="Vef-7G-bCv" secondAttribute="trailing" constant="10" id="yyE-qQ-BO4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hlB-kQ-dzH" secondAttribute="trailing" constant="16" id="zQq-1J-jnp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="speechContents" destination="hlB-kQ-dzH" id="2fJ-bD-gzV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>

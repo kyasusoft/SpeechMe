@@ -1,0 +1,19 @@
+PODS:
+  - AWSCognito (2.6.6):
+    - AWSCore (= 2.6.6)
+  - AWSCore (2.6.6)
+  - AWSPolly (2.6.6):
+    - AWSCore (= 2.6.6)
+
+DEPENDENCIES:
+  - AWSCognito
+  - AWSPolly
+
+SPEC CHECKSUMS:
+  AWSCognito: 7683df59094f1b4cd50d5a8e870a8ff59224d9b3
+  AWSCore: 64619e45b47678afab53ca0f9b4fa380ebee6f0b
+  AWSPolly: 1491ed4d692befddded0af142f1258a209a4379b
+
+PODFILE CHECKSUM: 72988839e7cf814d038b7fbf15e98126a8970895
+
+COCOAPODS: 1.3.1
